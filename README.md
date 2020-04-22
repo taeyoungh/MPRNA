@@ -29,7 +29,10 @@ barcodeCount.R generates COUNT_OUTPUT_PREFIX.Rdata for downstream analysis.
 -b the number of barcodes per a design\
 -t the threshold value of matched nucleotides between a read and a design for a read to be counted
 
-**Note** barodeCounter.R can take multiple samples at a time. In the case, all the arguments except for -o will be comma-separated. For example,\
+**Example** EZH2 pool + Miseq (162 cycles)\
+`barcodeCounter.R -n maxi1 -f minCMVEZH2pool_maxi1_S1_R1_001.fastq_alignment.txt -b 15 -t 150 -o maxi1_count`
+
+**Note** barcodeCounter.R can take multiple samples at a time. In the case, all the arguments except for -o will be comma-separated. For example,\
 `barcodeCounter.R -n SAMPLE1,SAMPLE2 -f ALIGNMENT1_OUTPUT.txt,ALIGNMENT2_OUTPUT.txt -b BARCODE_NUMBER1, BARCODE_NUMBER2 -t COUNTING_THRESHOLD1,COUNTING_THRESHOLD2 -o COUNT_OUTPUT_PREFIX`
 
 
