@@ -1,6 +1,18 @@
 # MPRNA (Massively Parallel RNa Assay)
 
+## 0. Prerequsite
+
+### Softwares
+[FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+
+Additionally, download all the manual programs in the folder "Programs" in this github.
+
+### Oligo Pool Design file
+Contact Rinn Lab.
+
 ## 1. Fastq
+
+Check quality by running fastqc.
 
 ## 2. Alignment / barcode-mapping
 
