@@ -5,10 +5,15 @@
 ## 2. Alignment / barcode-mapping
 
 `zcat SAMPLE.fastq.gz | barcodeAligner2.py -i stdin -o ALIGNMENT_OUTPUT.txt -g OligoPool.fa`
+-g oligo pool design file (fasta)
 
 ## 3. Read-counting per barcodes
 
 `barcodeCounter.R -n SAMPLE -f ALIGNMENT_OUTPUT.txt -b BARCODE_NUMBER -t COUNTING_THRESHOLD -o COUNT_OUTPUT_PREFIX`
+-n sample name\
+-f output file of barcodeAligner2.py\
+-b the number of barcodes per a design\
+-t the threshold value of matched nucleotides between a read and a design for a read to be counted
 
 barcodeCount.R generates COUNT_OUTPUT_PREFIX.Rdata for downstream analysis.
 
