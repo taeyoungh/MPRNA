@@ -16,7 +16,7 @@ Check quality by running fastqc.
 
 ## 2. Alignment / barcode-mapping
 
-`zcat SAMPLE.fastq.gz | barcodeAligner2.py -i stdin -o ALIGNMENT_OUTPUT.txt -g OligoPool.fa`
+`zcat SAMPLE.fastq.gz | barcodeAligner2.py -i stdin -o ALIGNMENT_OUTPUT.txt -g OligoPool.fa`\
 -g oligo pool design file (fasta)
 
 ## 3. Read-counting per barcodes
