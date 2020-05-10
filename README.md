@@ -16,9 +16,9 @@ Check quality by running fastqc.
 
 ## 2. Alignment (mapping reads by barcode)
 
-Taking sequencing reads and mapping them to barcode.
+This step takes a sequencing read file and maps sequencing reads to the barcodes in an oligo pool.
 
-`zcat SAMPLE.fastq.gz | barcodeAligner.py -i stdin -o ALIGNMENT_OUTPUT.txt -g OligoPool.fa`\
+`zcat SAMPLE.fastq.gz | barcodeAligner.py -i stdin -o ALIGNMENT_OUTPUT.txt -g OLIGO_POOL.fa`\
 -o output file name\
 -g oligo pool design file (fasta format)
 
@@ -27,9 +27,9 @@ Taking sequencing reads and mapping them to barcode.
 
 ## 3. Counting reads per barcodes
 
-barcodeCount.R generates COUNT_OUTPUT_PREFIX.Rdata for downstream analysis.
+This step generates COUNT_OUTPUT_PREFIX.Rdata for downstream analysis.
 
-`barcodeCounter.R -n SAMPLE -f ALIGNMENT_OUTPUT.txt -g OligoPool.fa -t COUNTING_THRESHOLD -o COUNT_OUTPUT_PREFIX`\
+`barcodeCounter.R -n SAMPLE -f ALIGNMENT_OUTPUT.txt -g OLIGO_POOL.fa -t COUNTING_THRESHOLD -o COUNT_OUTPUT_PREFIX`\
 -n sample name to be used in output\
 -f output file of barcodeAligner.py\
 -g oligo pool design file (fasta format)\
