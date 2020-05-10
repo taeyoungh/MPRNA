@@ -14,25 +14,30 @@ Contact Rinn Lab.
 
 Check quality by running fastqc.
 
-## 2. Alignment / barcode-mapping
+## 2. Alignment (mapping reads by barcode)
 
-`zcat SAMPLE.fastq.gz | barcodeAligner2.py -i stdin -o ALIGNMENT_OUTPUT.txt -g OligoPool.fa`\
--g oligo pool design file (fasta)
+Taking sequencing reads and mapping them to barcode.
 
-## 3. Read-counting per barcodes
+`zcat SAMPLE.fastq.gz | barcodeAligner.py -i stdin -o ALIGNMENT_OUTPUT.txt -g OligoPool.fa`\
+-o output file name\
+-g oligo pool design file (fasta format)
+
+**Example** 
+`zcat maxi1.fastq.gz | barcodeAligner.py -i stdin -o maxi1_alignment.txt -g oligoPool.fa`
+
+## 3. Counting reads per barcodes
 
 barcodeCount.R generates COUNT_OUTPUT_PREFIX.Rdata for downstream analysis.
 
-`barcodeCounter.R -n SAMPLE -f ALIGNMENT_OUTPUT.txt -b BARCODE_NUMBER -t COUNTING_THRESHOLD -o COUNT_OUTPUT_PREFIX`\
--n sample name\
--f output file of barcodeAligner2.py\
--b the number of barcodes per a design\
--t the threshold value of matched nucleotides between a read and a design for a read to be counted
+`barcodeCounter.R -n SAMPLE -f ALIGNMENT_OUTPUT.txt -g OligoPool.fa -t COUNTING_THRESHOLD -o COUNT_OUTPUT_PREFIX`\
+-n sample name to be used in output\
+-f output file of barcodeAligner.py\
+-g oligo pool design file (fasta format)\
+-t the threshold value of mismatched nucleotides between a read and a design for a read to be counted, for example -t 2 counts reads whose mismatches less than or equal to 2.\
+-o output_prefix
 
-**Example** EZH2 pool + Miseq (162 cycles)\
-`barcodeCounter.R -n maxi1 -f minCMVEZH2pool_maxi1_S1_R1_001.fastq_alignment.txt -b 15 -t 150 -o maxi1_count`
+**Example** 
+`barcodeCounter.R -n maxi1 -f maxi1_alignment.txt -g oligoPool.fasta -t 2 -o maxi1_count`
 
-**Note** barcodeCounter.R can take multiple samples at a time. In the case, all the arguments except for -o will be comma-separated. For example,\
-`barcodeCounter.R -n SAMPLE1,SAMPLE2 -f ALIGNMENT1_OUTPUT.txt,ALIGNMENT2_OUTPUT.txt -b BARCODE_NUMBER1, BARCODE_NUMBER2 -t COUNTING_THRESHOLD1,COUNTING_THRESHOLD2 -o COUNT_OUTPUT_PREFIX`
-
-
+**Note** barcodeCounter.R can take multiple samples at a time for the same oligo pool design. In the case, all the arguments except for -o and -g will be comma-separated. For example,\
+`barcodeCounter.R -n SAMPLE1,SAMPLE2 -f ALIGNMENT1_OUTPUT.txt,ALIGNMENT2_OUTPUT.txt -g OligoPool.fa -t COUNTING_THRESHOLD1,COUNTING_THRESHOLD2 -o COUNT_OUTPUT_PREFIX`
