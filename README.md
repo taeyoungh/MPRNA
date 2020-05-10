@@ -3,9 +3,9 @@
 ## 0. Prerequsite
 
 ### Softwares
-[FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
-[R](https://www.r-project.org/)
-[R package: optparse](https://cran.r-project.org/web/packages/optparse/index.html)
+[FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)\
+[R](https://www.r-project.org/)\
+[R package: optparse](https://cran.r-project.org/web/packages/optparse/index.html)\
 Additionally, download all the programs in the folder "Programs" in this github.
 
 ### Oligo Pool Design file
