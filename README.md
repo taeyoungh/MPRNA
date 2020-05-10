@@ -4,8 +4,9 @@
 
 ### Softwares
 [FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
-
-Additionally, download all the manual programs in the folder "Programs" in this github.
+[R](https://www.r-project.org/)
+[R package: optparse](https://cran.r-project.org/web/packages/optparse/index.html)
+Additionally, download all the programs in the folder "Programs" in this github.
 
 ### Oligo Pool Design file
 Contact Rinn Lab.
