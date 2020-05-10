@@ -22,7 +22,7 @@ Taking sequencing reads and mapping them to barcode.
 -o output file name\
 -g oligo pool design file (fasta format)
 
-**Example** 
+**Example**\
 `zcat maxi1.fastq.gz | barcodeAligner.py -i stdin -o maxi1_alignment.txt -g oligoPool.fa`
 
 ## 3. Counting reads per barcodes
@@ -36,7 +36,7 @@ barcodeCount.R generates COUNT_OUTPUT_PREFIX.Rdata for downstream analysis.
 -t the threshold value of mismatched nucleotides between a read and a design for a read to be counted, for example -t 2 counts reads whose mismatches less than or equal to 2.\
 -o output_prefix
 
-**Example** 
+**Example**\
 `barcodeCounter.R -n maxi1 -f maxi1_alignment.txt -g oligoPool.fasta -t 2 -o maxi1_count`
 
 **Note** barcodeCounter.R can take multiple samples at a time for the same oligo pool design. In the case, all the arguments except for -o and -g will be comma-separated. For example,\
