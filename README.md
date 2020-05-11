@@ -42,3 +42,8 @@ This step generates COUNT_OUTPUT_PREFIX.Rdata for downstream analysis.
 
 **Note** barcodeCounter.R can take multiple samples at a time for the same oligo pool design. In the case, all the arguments except for -o and -g will be comma-separated. For example,\
 `barcodeCounter.R -n SAMPLE1,SAMPLE2 -f ALIGNMENT1_OUTPUT.txt,ALIGNMENT2_OUTPUT.txt -g OligoPool.fa -t COUNTING_THRESHOLD1,COUNTING_THRESHOLD2 -o COUNT_OUTPUT_PREFIX`
+
+## 4. Representation of oligos
+
+See "representation.md".
+
