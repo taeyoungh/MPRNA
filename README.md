@@ -45,5 +45,5 @@ This step generates COUNT_OUTPUT_PREFIX.Rdata for downstream analysis.
 
 ## 4. Representation of oligos
 
-See "representation.md".
+This step is done with R. See "representation.md".
 
