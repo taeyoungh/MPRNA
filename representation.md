@@ -2,6 +2,11 @@ Representation of oligos
 ================
 Taeyoung Hwang
 
+This R script shows an example of how to check the representation of
+oligos after ePCR/Cloning/Transfection.
+
+# 0\. Libraries required
+
 ``` r
 library(ggplot2)
 library(cowplot)
@@ -54,19 +59,19 @@ align.qc[["Unmapped"]] / align.qc[["Total"]]
 
 ### Mapped rate
 
-barplot
+Barplot
 
 ``` r
 p <- ggplot(subset(align.qc[["Mapped"]], MismatchNum>=0), aes(x=MismatchNum, y=Prop)) + facet_grid(.~Sample)
 p <- p + geom_point() + geom_line(linetype = "dashed")
 p <- p + xlab("Number of Mismatches") + ylab("Proportion of reads")
-p <- p + theme(axis.title = element_text(size=22), axis.text=element_text(size=18))
+p <- p + theme(axis.title = element_text(size=20), axis.text=element_text(size=18))
 p + ggtitle("Barcoded reads with mismatches")
 ```
 
 ![](representation_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-detail number
+Detail number of reads per mismatches whose proportion \> 1%
 
 ``` r
 subset(subset(align.qc[["Mapped"]], MismatchNum>=0), Prop>=0.01)
@@ -85,19 +90,6 @@ subset(subset(align.qc[["Mapped"]], MismatchNum>=0), Prop>=0.01)
 
 # 3\. Representation of oligos
 
-``` r
-lapply(count, dim)
-```
-
-    ## $maxi1
-    ## [1] 3741   15
-    ## 
-    ## $maxi2
-    ## [1] 3741   15
-    ## 
-    ## $maxiMix
-    ## [1] 3741   15
-
 ### Count matrix to table
 
 ``` r
@@ -114,7 +106,22 @@ idx <- match(count.table$designID, oligoPool.design$designID)
 count.table$gene_name <- oligoPool.design$gene_name[idx]
 ```
 
-### Number of barcodes that have 0 read
+### Distribution of reads per oligo
+
+``` r
+p <- ggplot(count.table, aes(log10(count+1))) + facet_grid(.~sample)
+p <- p + geom_histogram()
+p <- p + xlab("Log10 (count+1)") + ylab("Number of oligos")
+p <- p + theme(axis.title = element_text(size=20), axis.text=element_text(size=18))
+p + ggtitle("Distribution of oligos")
+```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](representation_files/figure-gfm/unnamed-chunk-11-1.png)<!-- --> Note
+that this pool (EZH2) has 3714\*15=56115 oligos.
+
+### Number of barcodes that have no read per tile
 
 #### Plot
 
@@ -125,18 +132,18 @@ temp <- melt(temp, id.vars = "designID", variable.name = "sample", value.name="n
 temp$gene_name <- oligoPool.design$gene_name[match(temp$designID, oligoPool.design$designID)]
 
 p <- ggplot(temp, aes(x=designID, y=number)) + facet_grid(sample~.,)
-p <- p + geom_point(aes(col=gene_name), size=1)
+p <- p + geom_point(aes(col=gene_name), size=1.5)
 p <- p + ylim(0, ncol(count[[1]]))
 p <- p + geom_hline(yintercept = ncol(count[[1]]), linetype="dashed")
+p <- p + theme(axis.title = element_text(size=20), axis.text=element_text(size=18))
 p <- p + theme(axis.text.x=element_blank())
-p <- p + theme(axis.title = element_text(size=22), axis.text=element_text(size=18))
 p <- p + theme(legend.position="none")
 p + xlab("Design ID") + ylab("Number of barcodes that have no read")
 ```
 
-![](representation_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
-colored by
-gene
+![](representation_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> Note
+that this pool (EZH2) has 15 barcodes per a tile. A color indicates a
+gene.
 
 #### Summary by gene: number of tiles whose y-axis values are zero in the plot
 
@@ -202,18 +209,18 @@ temp <- melt(temp, id.vars = "designID", variable.name = "sample", value.name="n
 temp$gene_name <- oligoPool.design$gene_name[match(temp$designID, oligoPool.design$designID)]
 
 p <- ggplot(temp, aes(x=designID, y=number)) + facet_grid(sample~.,)
-p <- p + geom_point(aes(col=gene_name), size=1)
+p <- p + geom_point(aes(col=gene_name), size=1.5)
 p <- p + ylim(0, ncol(count[[1]]))
 p <- p + geom_hline(yintercept = 10, linetype="dashed")
-p <- p + theme(axis.text.x=element_blank())
 p <- p + theme(axis.title = element_text(size=22), axis.text=element_text(size=18))
+p <- p + theme(axis.text.x=element_blank())
 p <- p + theme(legend.position="none")
 p + xlab("Design ID") + ylab("Number of barcodes whose counts >= 10")
 ```
 
-![](representation_files/figure-gfm/unnamed-chunk-14-1.png)<!-- --> -
-colored by
-gene
+![](representation_files/figure-gfm/unnamed-chunk-14-1.png)<!-- --> Note
+that this pool (EZH2) has 15 barcodes per a tile. A color indicates a
+gene.
 
 #### Summary by gene: number of tiles whose y-axis values are more than or equal to 10
 
