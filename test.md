@@ -4,6 +4,7 @@
 **Last modified 2021-04-09**  
 
 ## A: Cloning  
+
 **_Digestion_**  
 1. Cut 50 ng ePCR-amplified oligo-pool (total dependent on ePCR yield) in Eppendorf Low bind tubes and 6 µg MPRNA empty vector each with proper REs.  
 2. 1 µl CIP (NEB) treatment of backbone for 30 min @ 37°C.  
