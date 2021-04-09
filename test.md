@@ -41,7 +41,7 @@
 28. Repeat until all 4 plates are done.  
 29. Collect in the Falcon tube and continue with 4 more plates until all are done.  
 30. Spin @ 5,000 rpm for 15 min (Eppedorf table top in Fairchild).
-* Note: the pellets may be frozen before Maxi. In this case thaw them for 10-15 min before proceeding with the Maxi.  
+- Note: the pellets may be frozen before Maxi. In this case thaw them for 10-15 min before proceeding with the Maxi.
 31. Proceed with the Maxi prep high yield (2-3 Maxi depending on the volume of LB needed to scrape the plate).  
 32. Elute in a 1.5 low-bind eppedorf tube using 300ul EB/prep.  
 33. Pool the eluates.  
