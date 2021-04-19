@@ -3,23 +3,27 @@
 **Protocol typed up by Taeyoung Hwang**  
 **Last modified 2021-04-09**  
 
-** A. Digestion  
+**A. Digestion
+
 1. Cut 50 ng ePCR-amplified oligo-pool (total dependent on ePCR yield) in Eppendorf Low bind tubes and 6 µg MPRNA empty vector each with proper REs.  
 2. 1 µl CIP (NEB) treatment of backbone for 30 min @ 37°C.  
 3. Qiagen PCR clean up of oligo-pools and gel extract of SfiI linearized backbone.  
 4. Measure concentrations with Qubit.  
 
-** B. Ligation
+**B. Ligation
+
 5. Setup a 20 µl ligation rxn with concentrated 1 µl T4 DNA Ligase (400 U/µl) from NEB (or Quick Ligase) in 10x T4 DNA ligase buffer (make sure the buffer is free of precipitate: warm it up and vortex).  
 6. Use 100 ng backbone + 4 x molar excess of oligopool.  
 - Example: 
 - backbone 157 ng/µl = 96.76 fmol => 0.64 µl
 -	pool X = 4.9 ng/µl = 45.48 fmol => 5.44 µl + 2 µl ligation buffer + 10.9 µl dH2O + 1 µl ligase 
 -	pool Y = 0.918 ng/µl = 8.52 fmol/µl => 29.1 µl + 4 µl ligation buffer + 5.3 µl dH2O + 1 µl ligase  
+
 7. Incubate 16-18 hours @ 16°C.  
 8. Place on ice until ready for transformation.  
 
-** C. Transformation  
+**C. Transformation  
+
 9. Pre-warm the small waterbath at 42oC
 10. Pre-warm the vial of SOC medium and 20-22 LB+ampicillin plates @ 37°C.  
 11. Spin the ligation reaction and place on ice.  
@@ -33,7 +37,8 @@
 19. Invert the plates and incubate @ 37°C O/N – 15-17 hours.  
 20. Check for growth. If successful, proceed to maxiprep.
 
-** D. Maxiprep  
+**D. Maxiprep  
+
 21. Fill 3-4 50ml Falcon with LB+ampicillin.  
 22. Add 5ml to 2 of the plates and scrape (use a cell scraper).  
 23. Place both plate at an angle (on the cover) to collect the scraped colonies on one side.  
@@ -44,7 +49,8 @@
 28. Repeat until all 4 plates are done.  
 29. Collect in the Falcon tube and continue with 4 more plates until all are done.  
 30. Spin @ 5,000 rpm for 15 min (Eppedorf table top in Fairchild).
-- Note: the pellets may be frozen before Maxi. In this case thaw them for 10-15 min before proceeding with the Maxi.
+- Note: the pellets may be frozen before Maxi. In this case thaw them for 10-15 min before proceeding with the Maxi.  
+
 31. Proceed with the Maxi prep high yield (2-3 Maxi depending on the volume of LB needed to scrape the plate).  
 32. Elute in a 1.5 low-bind eppedorf tube using 300ul EB/prep.  
 33. Pool the eluates.  
