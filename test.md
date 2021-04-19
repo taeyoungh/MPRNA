@@ -3,14 +3,14 @@
 **Protocol typed up by Taeyoung Hwang**  
 **Last modified 2021-04-09**  
 
-**A. Digestion
+**A. Digestion**
 
 1. Cut 50 ng ePCR-amplified oligo-pool (total dependent on ePCR yield) in Eppendorf Low bind tubes and 6 µg MPRNA empty vector each with proper REs.  
 2. 1 µl CIP (NEB) treatment of backbone for 30 min @ 37°C.  
 3. Qiagen PCR clean up of oligo-pools and gel extract of SfiI linearized backbone.  
 4. Measure concentrations with Qubit.  
 
-**B. Ligation
+**B. Ligation**
 
 5. Setup a 20 µl ligation rxn with concentrated 1 µl T4 DNA Ligase (400 U/µl) from NEB (or Quick Ligase) in 10x T4 DNA ligase buffer (make sure the buffer is free of precipitate: warm it up and vortex).  
 6. Use 100 ng backbone + 4 x molar excess of oligopool.  
@@ -22,7 +22,7 @@
 7. Incubate 16-18 hours @ 16°C.  
 8. Place on ice until ready for transformation.  
 
-**C. Transformation  
+**C. Transformation**  
 
 9. Pre-warm the small waterbath at 42oC
 10. Pre-warm the vial of SOC medium and 20-22 LB+ampicillin plates @ 37°C.  
@@ -37,7 +37,7 @@
 19. Invert the plates and incubate @ 37°C O/N – 15-17 hours.  
 20. Check for growth. If successful, proceed to maxiprep.
 
-**D. Maxiprep  
+**D. Maxiprep**  
 
 21. Fill 3-4 50ml Falcon with LB+ampicillin.  
 22. Add 5ml to 2 of the plates and scrape (use a cell scraper).  
