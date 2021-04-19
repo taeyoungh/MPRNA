@@ -3,8 +3,6 @@
 **Protocol typed up by Taeyoung Hwang**  
 **Last modified 2021-04-09**  
 
-## A: Cloning
-
 **_Digestion_**  
 1. Cut 50 ng ePCR-amplified oligo-pool (total dependent on ePCR yield) in Eppendorf Low bind tubes and 6 µg MPRNA empty vector each with proper REs.  
 2. 1 µl CIP (NEB) treatment of backbone for 30 min @ 37°C.  
@@ -47,6 +45,4 @@
 32. Elute in a 1.5 low-bind eppedorf tube using 300ul EB/prep.  
 33. Pool the eluates.  
 34. Measure concentration with nanodrop.  
-
-## B: Miseq  
 
